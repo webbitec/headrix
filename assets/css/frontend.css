@@ -1,0 +1,569 @@
+﻿/* استایل‌های اصلی Headrix */
+:root {
+    --hdrx-bg: #ffffff;
+    --hdrx-text: #333333;
+    --hdrx-link: #0073aa;
+    --hdrx-hover: #005a87;
+    --hdrx-border: #e5e5e5;
+    --hdrx-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* هدر اصلی */
+#headrix-header {
+    background-color: var(--hdrx-bg);
+    color: var(--hdrx-text);
+    position: relative;
+    z-index: 1000;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.hdrx-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* لایه‌بندی استاندارد */
+.hdrx-standard-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+    gap: 30px;
+}
+
+.hdrx-col {
+    display: flex;
+    align-items: center;
+}
+
+/* لوگو */
+.hdrx-logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hdrx-logo img {
+    max-height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* منو */
+.hdrx-menu-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hdrx-nav-container {
+    display: block;
+}
+
+.hdrx-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.hdrx-nav > li {
+    position: relative;
+}
+
+.hdrx-nav > li > a {
+    text-decoration: none;
+    color: var(--hdrx-text);
+    font-weight: 500;
+    padding: 10px 0;
+    position: relative;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.hdrx-nav > li > a:hover {
+    color: var(--hdrx-hover);
+}
+
+/* ساب منو */
+.hdrx-nav .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: var(--hdrx-shadow);
+    border-radius: 4px;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.hdrx-nav > li:hover > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hdrx-nav .sub-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: var(--hdrx-text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.hdrx-nav .sub-menu li a:hover {
+    background: #f8f9fa;
+    color: var(--hdrx-hover);
+}
+
+/* اکشن‌ها */
+.hdrx-actions-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* دکمه همبرگر موبایل */
+.hdrx-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    flex-direction: column;
+    gap: 4px;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hdrx-mobile-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--hdrx-text);
+    transition: all 0.3s ease;
+}
+
+/* منوی موبایل */
+.hdrx-mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9998;
+}
+
+.hdrx-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background: white;
+    z-index: 9999;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+}
+
+.hdrx-mobile-menu.active {
+    right: 0;
+}
+
+.hdrx-mobile-menu-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--hdrx-border);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hdrx-mobile-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--hdrx-text);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hdrx-mobile-menu-content {
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100% - 81px);
+}
+
+.hdrx-mobile-nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hdrx-mobile-nav-menu li {
+    margin-bottom: 10px;
+}
+
+.hdrx-mobile-nav-menu li a {
+    display: block;
+    padding: 10px 0;
+    color: var(--hdrx-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hdrx-border);
+}
+
+.hdrx-mobile-nav-menu .sub-menu {
+    list-style: none;
+    margin: 0;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    .hdrx-container {
+        padding: 0 15px;
+    }
+    
+    .hdrx-standard-layout {
+        min-height: 60px;
+        gap: 15px;
+    }
+    
+    .hdrx-logo img {
+        max-height: 40px;
+    }
+    
+    .hdrx-nav {
+        display: none;
+    }
+    
+    .hdrx-mobile-toggle {
+        display: flex;
+    }
+    
+    .hdrx-actions-wrapper {
+        gap: 10px;
+    }
+}
+
+/* حالت استیکی */
+.hdrx-header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: var(--hdrx-shadow);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+body.hdrx-has-sticky {
+    padding-top: 80px;
+}
+
+@media (max-width: 768px) {
+    body.hdrx-has-sticky {
+        padding-top: 60px;
+    }
+}
+
+/* لایه‌بندی‌های دیگر */
+.hdrx-centered-layout,
+.hdrx-split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+    gap: 20px;
+}
+
+.hdrx-stacked-layout {
+    padding: 20px 0;
+}
+
+.hdrx-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.hdrx-bottom-row {
+    border-top: 1px solid var(--hdrx-border);
+    padding-top: 20px;
+}
+
+.hdrx-full-width {
+    width: 100%;
+}
+
+/* حالت RTL */
+body.rtl .hdrx-mobile-menu {
+    right: auto;
+    left: -100%;
+}
+
+body.rtl .hdrx-mobile-menu.active {
+    right: auto;
+    left: 0;
+}
+
+body.rtl .hdrx-nav .sub-menu {
+    left: auto;
+    right: 0;
+}
+
+body.rtl .hdrx-mobile-nav-menu .sub-menu {
+    padding-left: 0;
+    padding-right: 15px;
+}
+/* استایل‌های پایه برای Headrix */
+#headrix-header {
+    position: relative;
+    z-index: 1000;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+#headrix-header * {
+    box-sizing: border-box;
+}
+
+.hdrx-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* لایه‌بندی استاندارد */
+.hdrx-standard-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--hdrx-header-height, 80px);
+    gap: 20px;
+}
+
+.hdrx-col {
+    display: flex;
+    align-items: center;
+}
+
+/* لوگو */
+.hdrx-logo a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.hdrx-logo img {
+    max-height: 50px;
+    width: auto;
+    vertical-align: middle;
+}
+
+/* منو */
+.hdrx-menu-wrapper {
+    flex: 1;
+}
+
+.hdrx-nav-container {
+    display: block;
+}
+
+.hdrx-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.hdrx-nav > li {
+    position: relative;
+}
+
+.hdrx-nav > li > a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    padding: 10px 0;
+    display: block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.hdrx-nav > li > a:hover {
+    color: var(--hdrx-link, #0073aa);
+}
+
+/* ساب منو */
+.hdrx-nav .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.hdrx-nav > li:hover > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.hdrx-nav .sub-menu li a {
+    display: block;
+    padding: 8px 20px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.hdrx-nav .sub-menu li a:hover {
+    background: #f8f9fa;
+    color: var(--hdrx-link, #0073aa);
+}
+
+/* اکشن‌ها */
+.hdrx-actions-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* دکمه همبرگر موبایل */
+.hdrx-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.hdrx-mobile-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+    transition: all 0.3s ease;
+}
+
+/* ریسپانسیو */
+@media (max-width: 768px) {
+    .hdrx-container {
+        padding: 0 12px;
+    }
+    
+    .hdrx-standard-layout {
+        min-height: 60px;
+        gap: 15px;
+    }
+    
+    .hdrx-logo img {
+        max-height: 35px;
+    }
+    
+    .hdrx-nav {
+        display: none;
+    }
+    
+    .hdrx-mobile-toggle {
+        display: flex;
+    }
+    
+    .hdrx-actions-wrapper {
+        gap: 10px;
+    }
+}
+
+/* حالت استیکی */
+.hdrx-header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    animation: headrixSlideDown 0.3s ease;
+}
+
+@keyframes headrixSlideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+body.hdrx-has-sticky {
+    padding-top: var(--hdrx-header-height, 80px);
+}
+
+@media (max-width: 768px) {
+    body.hdrx-has-sticky {
+        padding-top: 60px;
+    }
+}
+
+/* حالت RTL */
+body.rtl .hdrx-nav .sub-menu {
+    left: auto;
+    right: 0;
+}
+
+body.rtl .hdrx-nav {
+    flex-direction: row-reverse;
+}
+
+/* سازگاری با admin bar */
+body.admin-bar #headrix-header.sticky {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar #headrix-header.sticky {
+        top: 46px;
+    }
+}

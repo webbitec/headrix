@@ -1,0 +1,81 @@
+headrix/
+│
+├── core/
+│   ├── bootstrap.php          # بارگذاری اولیه پلاگین و هوک‌ها
+│   ├── helpers.php            # توابع عمومی و ابزارهای داخلی
+│   ├── api.php                # ارتباط بین ماژول‌ها
+│   ├── security.php           # nonce، sanitize، escape، دسترسی‌ها
+│   └── override.php           # غیرفعال کردن هدر/منوهای قالب و صفحه‌سازها
+│
+├── modules/
+│   ├── header/
+│   │   ├── builder.php        # ساختار ردیف/ستون هدر
+│   │   ├── sticky.php         # حالت استیکی، شفاف، اسکرول‌پذیر
+│   │   ├── responsive.php     # مدیریت نمایش در دستگاه‌های مختلف
+│   │   └── elements/
+│   │       ├── logo.php       # موقعیت و اندازه لوگو
+│   │       ├── menu.php       # اتصال به مگامنو
+│   │       ├── search.php     # آیکون یا باکس جستجو
+│   │       ├── cart.php       # سبد خرید ووکامرس
+│   │       ├── button.php     # دکمه CTA
+│   │       ├── social.php     # آیکون شبکه‌های اجتماعی
+│   │       └── custom.php     # HTML سفارشی یا شورت‌کد
+│
+│   ├── menu/
+│   │   ├── megamenu.php       # ساختار چندستونه و آیتم‌های تو در تو
+│   │   ├── walker.php         # واکر سفارسی مگامنو
+│   │   ├── widgets.php        # افزودن ویجت، بنر، محصول
+│   │   ├── conditions.php     # نمایش شرطی بر اساس نقش، taxonomy، URL
+│   │   ├── icons.php          # آیکون‌ها برای منوها
+│   │   └── mobile.php         # منوی موبایل (همبرگر، آکاردئون)
+│
+│   ├── styling/
+│   │   ├── presets.php        # تم‌های آماده و قابل انتخاب
+│   │   ├── variables.php      # تولید CSS Variables برای رنگ، فاصله، فونت
+│   │   └── customizer.php     # کنترل‌های UI برای استایل‌ها
+│
+│   ├── integrations/
+│   │   ├── pagebuilders.php   # غیرفعال کردن هدر/فوتر صفحه‌سازها
+│   │   ├── elementor.php      # ویجت اختصاصی المنتور
+│   │   ├── visualcomposer.php # ویجت ویژوال کامپوزر
+│   │   ├── gutenberg.php      # بلاک سفارشی گوتنبرگ
+│   │   ├── woocommerce.php    # آیتم‌های پویا برای فروشگاه
+│   │   └── themes.php         # سازگاری با قالب‌های عمومی
+│
+│   ├── settings/
+│   │   ├── panel.php          # پنل تنظیمات حرفه‌ای
+│   │   ├── livepreview.php    # پیش‌نمایش زنده تغییرات
+│   │   ├── importexport.php   # ایمپورت/اکسپورت تنظیمات و دموها
+│   │   └── onboarding.php     # راه‌اندازی اولیه و آموزش سریع
+│
+│   └── performance/
+│       ├── cache.php          # کش داخلی برای رندر سریع
+│       ├── lazyload.php       # بارگذاری مشروط منابع
+│       └── accessibility.php  # ARIA، ناوبری کیبورد، کنتراست رنگ
+│
+├── assets/
+│   ├── css/
+│   │   ├── frontend.css       # استایل‌های سمت کاربر
+│   │   ├── admin.css          # استایل‌های پنل تنظیمات
+│   │   └── variables.css      # CSS Variables تولید شده
+│   ├── js/
+│   │   ├── frontend.js        # رفتار منو و هدر
+│   │   ├── admin.js           # رفتار پنل تنظیمات
+│   │   └── mobile.js          # رفتار منوی موبایل
+│   ├── fonts/                 # فونت‌های آیکون
+│   └── images/                # آیکون‌ها، لوگو، نمونه‌ها
+│
+├── languages/
+│   └── headrix.pot            # فایل ترجمه برای i18n و RTL
+│
+├── templates/                 # تمپلیت‌های قابل override
+│   ├── header.php
+│   ├── mobile-menu.php
+│   └── mega-menu-column.php
+│
+├── docs/
+│   ├── readme.md              # توضیحات کلی پلاگین
+│   ├── faq.md                 # سوالات متداول
+│   └── changelog.md           # لیست تغییرات نسخه‌ها
+│
+└── headrix.php                # فایل اصلی پلاگین برای وردپرس
